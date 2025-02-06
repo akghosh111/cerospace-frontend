@@ -8,7 +8,7 @@ import Dashboard from './components/Dashboard';
 import Journals from './components/Journals';
 import BreathingExercise from './components/BreathingExercise';
 import MoodLogger from './components/MoodLogger';
-import { supabase } from './supabaseclient';
+import { supabase } from './supabaseClient';
 import Resources from './components/Resources';
 import CBTChatbot from './components/CBTChatbot';
 import AITherapist from './components/AITherapist';

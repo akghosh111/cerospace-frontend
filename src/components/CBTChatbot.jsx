@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { supabase } from '../supabaseclient';
+import { supabase } from '../supabaseClient';
 import { Plus, MessageSquare, Trash2 } from 'lucide-react';
 
 const CBTChatbot = () => {

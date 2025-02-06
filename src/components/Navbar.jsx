@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { LogIn, LogOut, Menu, X } from 'lucide-react';
 import Login from './Login';
-import { supabase } from '../supabaseclient';
+import { supabase } from '../supabaseClient';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

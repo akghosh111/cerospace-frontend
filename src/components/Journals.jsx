@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { supabase } from '../supabaseclient';
+import { supabase } from '../supabaseClient';
 import { Plus, Pencil, Search, Trash2 } from 'lucide-react';
 
 const Journals = () => {
