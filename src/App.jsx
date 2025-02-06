@@ -99,7 +99,7 @@ function App() {
               </ProtectedRoute>
             }
           />
-          <Route path="/ai-therapist" element={<AITherapist />} />
+          {/* <Route path="/ai-therapist" element={<AITherapist />} /> */}
 
         </Routes>
       </div>
