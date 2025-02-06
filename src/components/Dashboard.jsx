@@ -11,7 +11,7 @@ const Dashboard = ({ session }) => {
     { title: 'Breathing Exercises', path: '/breathing-exercises' },
     { title: 'Resources', path: '/resources' },
     { title: 'CBT Chatbot', path: '/cbt-chatbot' },
-    { title: 'AI Therapist', path: '/ai-therapist' },
+    { title: 'AI Therapist', path: 'https://cerospacetherapy.vercel.app/', external: true },
   ];
 
   if (!session) {
@@ -25,17 +25,31 @@ const Dashboard = ({ session }) => {
           Welcome, {session.user.email}
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              onClick={() => navigate(feature.path)}
-              className="p-6 bg-white rounded-2xl shadow hover:shadow-lg cursor-pointer flex justify-between items-center transition-shadow"
-            >
-              <span className="text-lg font-semibold text-gray-800">{feature.title}</span>
-              <ArrowRight size={24} className="text-blue-600" />
-            </div>
-          ))}
-        </div>
+  {features.map((feature, index) => (
+    feature.external ? (
+      <a 
+        key={index} 
+        href={feature.path} 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="p-6 bg-white rounded-2xl shadow hover:shadow-lg cursor-pointer flex justify-between items-center transition-shadow"
+      >
+        <span className="text-lg font-semibold text-gray-800">{feature.title}</span>
+        <ArrowRight size={24} className="text-blue-600" />
+      </a>
+    ) : (
+      <div 
+        key={index} 
+        onClick={() => navigate(feature.path)} 
+        className="p-6 bg-white rounded-2xl shadow hover:shadow-lg cursor-pointer flex justify-between items-center transition-shadow"
+      >
+        <span className="text-lg font-semibold text-gray-800">{feature.title}</span>
+        <ArrowRight size={24} className="text-blue-600" />
+      </div>
+    )
+  ))}
+</div>
+
       </div>
     </div>
   );
